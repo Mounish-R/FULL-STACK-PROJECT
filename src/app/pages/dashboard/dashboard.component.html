@@ -3,6 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Section - Add Questions</title>
+</head>
+<body>
+
+    <h1>Admin Section - Add Questions</h1>
+    
+    <!-- MCQ Form -->
+    <h2>Add MCQ</h2>
+    <form id="add-mcq-form">
+        <label for="mcq-question">Question:</label><br>
+        <input type="text" id="mcq-question" placeholder="Enter MCQ question" required><br><br>
+
+        <label for="mcq-option1">Option 1:</label><br>
+        <input type="text" id="mcq-option1" placeholder="Option 1" required><br><br>
+
+        <label for="mcq-option2">Option 2:</label><br>
+        <input type="text" id="mcq-option2" placeholder="Option 2" required><br><br>
+
+        <label for="mcq-option3">Option 3:</label><br>
+        <input type="text" id="mcq-option3" placeholder="Option 3" required><br><br>
+
+        <label for="mcq-option4">Option 4:</label><br>
+        <input type="text" id="mcq-option4" placeholder="Option 4" required><br><br>
+
+        <button type="submit">Add MCQ</button>
+    </form>
+
+    <!-- Short Answer Form -->
+    <h2>Add Short Answer Question</h2>
+    <form id="add-short-answer-form">
+        <label for="short-answer-question">Question:</label><br>
+        <input type="text" id="short-answer-question" placeholder="Enter short answer question" required><br><br>
+
+        <button type="submit">Add Short Answer Question</button>
+    </form>
+
+    <!-- Match the Following Form -->
+    <h2>Add Match the Following</h2>
+    <form id="add-match-form">
+        <label for="match-question">Question:</label><br>
+        <input type="text" id="match-question" placeholder="Enter match the following question" required><br><br>
+
+        <label for="match-option1">Option 1:</label><br>
+        <input type="text" id="match-option1" placeholder="Option 1" required><br><br>
+
+        <label for="match-option2">Option 2:</label><br>
+        <input type="text" id="match-option2" placeholder="Option 2" required><br><br>
+
+        <label for="match-option3">Option 3:</label><br>
+        <input type="text" id="match-option3" placeholder="Option 3" required><br><br>
+
+        <label for="match-option4">Option 4:</label><br>
+        <input type="text" id="match-option4" placeholder="Option 4" required><br><br>
+
+        <button type="submit">Add Match the Following</button>
+    </form>
+
+    <!-- Programming Question Form -->
+    <h2>Add Programming Question</h2>
+    <form id="add-programming-question-form">
+        <label for="programming-question">Question:</label><br>
+        <input type="text" id="programming-question" placeholder="Enter programming question" required><br><br>
+
+        <label for="programming-language">Language:</label><br>
+        <select id="programming-language" required>
+            <option value="" disabled selected>Select language</option>
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="cpp">C++</option>
+            <option value="java">Java</option>
+            <!-- Add more languages as needed -->
+        </select><br><br>
+
+        <label for="programming-answer">Expected Answer:</label><br>
+        <textarea id="programming-answer" placeholder="Enter the expected code/solution" rows="4" cols="50" required></textarea><br><br>
+
+        <button type="submit">Add Programming Question</button>
+    </form>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assessment Interface</title>
 </head>
 <body>
