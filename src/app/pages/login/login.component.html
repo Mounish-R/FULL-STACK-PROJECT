@@ -1,7 +1,7 @@
-
-<div class="parent"> 
-    
+<div class="logo">
     <img src="https://www.bitsathy.ac.in/wp-content/themes/baiotsathycollege/assets/images/header%2006.png" alt="Description of Image">
+</div>
+<div class="parent">  
     <div class="container" [ngClass]="isSignDivVisiable ? 'active' :'' " id="container">
         <div class="form-container sign-up" >
             <form>
@@ -12,6 +12,7 @@
                 <input type="email" name="email" [(ngModel)]="signUpObj.email" placeholder="Email">
                 <input type="password" name="password"  [(ngModel)]="signUpObj.password" placeholder="Password">
                 <button (click)="onRegister()">Sign Up</button>
+                <button (click)="onRegister()">Login With Google</button>
             </form>
         </div>
         <div class="form-container sign-in" >
@@ -39,4 +40,5 @@
         </div>
     </div>
 </div>
+
 

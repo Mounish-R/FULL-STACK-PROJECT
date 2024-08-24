@@ -1,287 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Section - Add Questions</title>
-</head>
-<body>
-
-    <h1>Admin Section - Add Questions</h1>
+<div class="dashboard-links">
+    <button routerLink="/admin">Go to Admin Section</button>
+    <button routerLink="/user">Go to User Section</button>
+</div>
+<div class="user-dashboard">
+    <h2>User Dashboard</h2>
+    <div class="profile-picture">
+        <img src="https://imgs.search.brave.com/9whgZy6FvowddR1urcESjJ6K7jaR_ZPpZCXmUT7Tovk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAxLzE5LzMyLzkz/LzM2MF9GXzExOTMy/OTM4N19zVVRiVWRl/eWhrMG51aE53NVdh/RnZPeVFGbXhlcHBq/WC5qcGc" alt="Profile Picture">
+    </div>
     
-    <!-- MCQ Form -->
-    <h2>Add MCQ</h2>
-    <form id="add-mcq-form">
-        <label for="mcq-question">Question:</label><br>
-        <input type="text" id="mcq-question" placeholder="Enter MCQ question" required><br><br>
-
-        <label for="mcq-option1">Option 1:</label><br>
-        <input type="text" id="mcq-option1" placeholder="Option 1" required><br><br>
-
-        <label for="mcq-option2">Option 2:</label><br>
-        <input type="text" id="mcq-option2" placeholder="Option 2" required><br><br>
-
-        <label for="mcq-option3">Option 3:</label><br>
-        <input type="text" id="mcq-option3" placeholder="Option 3" required><br><br>
-
-        <label for="mcq-option4">Option 4:</label><br>
-        <input type="text" id="mcq-option4" placeholder="Option 4" required><br><br>
-
-        <button type="submit">Add MCQ</button>
-    </form>
-
-    <!-- Short Answer Form -->
-    <h2>Add Short Answer Question</h2>
-    <form id="add-short-answer-form">
-        <label for="short-answer-question">Question:</label><br>
-        <input type="text" id="short-answer-question" placeholder="Enter short answer question" required><br><br>
-
-        <button type="submit">Add Short Answer Question</button>
-    </form>
-
-    <!-- Match the Following Form -->
-    <h2>Add Match the Following</h2>
-    <form id="add-match-form">
-        <label for="match-question">Question:</label><br>
-        <input type="text" id="match-question" placeholder="Enter match the following question" required><br><br>
-
-        <label for="match-option1">Option 1:</label><br>
-        <input type="text" id="match-option1" placeholder="Option 1" required><br><br>
-
-        <label for="match-option2">Option 2:</label><br>
-        <input type="text" id="match-option2" placeholder="Option 2" required><br><br>
-
-        <label for="match-option3">Option 3:</label><br>
-        <input type="text" id="match-option3" placeholder="Option 3" required><br><br>
-
-        <label for="match-option4">Option 4:</label><br>
-        <input type="text" id="match-option4" placeholder="Option 4" required><br><br>
-
-        <button type="submit">Add Match the Following</button>
-    </form>
-
-    <!-- Programming Question Form -->
-    <h2>Add Programming Question</h2>
-    <form id="add-programming-question-form">
-        <label for="programming-question">Question:</label><br>
-        <input type="text" id="programming-question" placeholder="Enter programming question" required><br><br>
-
-        <label for="programming-language">Language:</label><br>
-        <select id="programming-language" required>
-            <option value="" disabled selected>Select language</option>
-            <option value="python">Python</option>
-            <option value="javascript">JavaScript</option>
-            <option value="cpp">C++</option>
-            <option value="java">Java</option>
-            <!-- Add more languages as needed -->
-        </select><br><br>
-
-        <label for="programming-answer">Expected Answer:</label><br>
-        <textarea id="programming-answer" placeholder="Enter the expected code/solution" rows="4" cols="50" required></textarea><br><br>
-
-        <button type="submit">Add Programming Question</button>
-    </form>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assessment Interface</title>
-</head>
-<body>
-
-    <h1>Assessment Interface</h1>
-
-    <!-- MCQ Section -->
-    <div class="section">
-        <h2>Multiple Choice Questions (MCQ)</h2>
-        <div class="question">
-            <p>1. What is the capital of France?</p>
-            <ul class="options">
-                <li><input type="radio" name="mcq1" value="Paris"> Paris</li>
-                <li><input type="radio" name="mcq1" value="Berlin"> Berlin</li>
-                <li><input type="radio" name="mcq1" value="Madrid"> Madrid</li>
-                <li><input type="radio" name="mcq1" value="Rome"> Rome</li>
-            </ul>
-        </div>
-        <div class="question">
-            <p>2. What is the largest planet in our solar system?</p>
-            <ul class="options">
-                <li><input type="radio" name="mcq2" value="Earth"> Earth</li>
-                <li><input type="radio" name="mcq2" value="Jupiter"> Jupiter</li>
-                <li><input type="radio" name="mcq2" value="Mars"> Mars</li>
-                <li><input type="radio" name="mcq2" value="Venus"> Venus</li>
-            </ul>
-        </div>
-        <div class="question">
-            <p>3. What is the chemical symbol for water?</p>
-            <ul class="options">
-                <li><input type="radio" name="mcq3" value="O2"> O<sub>2</sub></li>
-                <li><input type="radio" name="mcq3" value="H2O"> H<sub>2</sub>O</li>
-                <li><input type="radio" name="mcq3" value="CO2"> CO<sub>2</sub></li>
-                <li><input type="radio" name="mcq3" value="NaCl"> NaCl</li>
-            </ul>
-        </div>
-        <div class="question">
-            <p>4. Who wrote "Romeo and Juliet"?</p>
-            <ul class="options">
-                <li><input type="radio" name="mcq4" value="Shakespeare"> William Shakespeare</li>
-                <li><input type="radio" name="mcq4" value="Dickens"> Charles Dickens</li>
-                <li><input type="radio" name="mcq4" value="Hemingway"> Ernest Hemingway</li>
-                <li><input type="radio" name="mcq4" value="Orwell"> George Orwell</li>
-            </ul>
-        </div>
-        <div class="question">
-            <p>5. Which element is most abundant in the Earth's atmosphere?</p>
-            <ul class="options">
-                <li><input type="radio" name="mcq5" value="Oxygen"> Oxygen</li>
-                <li><input type="radio" name="mcq5" value="Nitrogen"> Nitrogen</li>
-                <li><input type="radio" name="mcq5" value="Carbon"> Carbon</li>
-                <li><input type="radio" name="mcq5" value="Hydrogen"> Hydrogen</li>
-            </ul>
-        </div>
+    <!-- User Information Section -->
+    <div class="user-info">
+        <p><strong>Name:</strong> {{ userInfo.name }}</p>
+        <p><strong>Roll Number:</strong> {{ userInfo.rollNumber }}</p>
+        <p><strong>Department:</strong> {{ userInfo.department }}</p>
+        <p><strong>Current Year:</strong> {{ userInfo.currentYear }}</p>
+        <p><strong>Phone Number:</strong> {{ userInfo.phoneNumber }}</p>
     </div>
+  
+ <!-- Activity Log Section -->
+ <div class="activity-log">
+    <h3>Recent Activity</h3>
+    <ul>
+        <li>Logged in at </li>
+        <li>Completed Test 1 on </li>
+        <li>Submitted Feedback on </li>
+        <!-- Add more activities as needed -->
+    </ul>
+</div>
 
-    <!-- Short Answer Section -->
-    <div class="section">
-        <h2>Short Answer</h2>
-        <div class="question">
-            <p>1. Describe the process of photosynthesis.</p>
-            <textarea placeholder="Type your answer here..."></textarea>
-        </div>
-        <div class="question">
-            <p>2. Explain Newton's first law of motion.</p>
-            <textarea placeholder="Type your answer here..."></textarea>
-        </div>
-        <div class="question">
-            <p>3. What are the three branches of government?</p>
-            <textarea placeholder="Type your answer here..."></textarea>
-        </div>
-        <div class="question">
-            <p>4. Define the term 'Biodiversity'.</p>
-            <textarea placeholder="Type your answer here..."></textarea>
-        </div>
-        <div class="question">
-            <p>5. Explain the significance of the water cycle.</p>
-            <textarea placeholder="Type your answer here..."></textarea>
-        </div>
-    </div>
+<!-- Notifications Section -->
+<div class="notifications">
+    <h3>Notifications</h3>
+    <ul>
+        <li>New tests have been added to your dashboard.</li>
+        <!-- Add more notifications as needed -->
+    </ul>
+</div>
 
-    <!-- Match the Following Section -->
-    <div class="section">
-        <h2>Match the Following</h2>
-        <div class="question">
-            <p>1. Match the following countries with their capitals:</p>
-            <div class="match-pair">
-                <span>France</span>
-                <select>
-                    <option value="">Select Capital</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="Rome">Rome</option>
-                </select>
-            </div>
-            <div class="match-pair">
-                <span>Germany</span>
-                <select>
-                    <option value="">Select Capital</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="Rome">Rome</option>
-                </select>
-            </div>
-            <div class="match-pair">
-                <span>Spain</span>
-                <select>
-                    <option value="">Select Capital</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="Rome">Rome</option>
-                </select>
-            </div>
-            <div class="match-pair">
-                <span>Italy</span>
-                <select>
-                    <option value="">Select Capital</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="Rome">Rome</option>
-                </select>
-            </div>
-            <div class="match-pair">
-                <span>UK</span>
-                <select>
-                    <option value="">Select Capital</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="London">London</option>
-                </select>
-            </div>
+<!-- Marks and Upcoming Tests -->
+<div class="marks-graph">
+    <h3>Marks Obtained</h3>
+    <p><strong>Current Marks:</strong> </p>
+    <p><strong>Average Marks:</strong></p>
+    <br>
+    <h2>Upcoming Tests</h2>
+    <p><strong>Test 1:</strong> </p>
+    <p><strong>Test 2:</strong></p>
+</div>
+
+<!-- Feedback Section -->
+<div class="feedback-section">
+    <h2>Feedback</h2>
+    <form (ngSubmit)="submitFeedback()" #feedbackForm="ngForm">
+        <div class="form-group">
+            <label for="feedbackMessage">Your Feedback:</label>
+            <textarea id="feedbackMessage" name="feedbackMessage" rows="4" cols="50" ngModel required></textarea>
         </div>
-    </div>
+        <button type="submit" [disabled]="!feedbackForm.form.valid">Submit Feedback</button>
+    </form>
+</div>
+</div>
 
-    <!-- Compiler Section -->
-    <div class="section" id="compiler-section">
-        <h2>Code Compiler</h2>
-
-        <div class="question">
-            <p>1. Write a Python program to print "Hello, World!".</p>
-            <textarea id="code1" placeholder="Type your code here..."></textarea>
-            <button onclick="runCode('code1')">Run Code</button>
-            <div id="output1" class="output"></div>
-        </div>
-
-        <div class="question">
-            <p>2. Write a JavaScript function to reverse a string.</p>
-            <textarea id="code2" placeholder="Type your code here..."></textarea>
-            <button onclick="runCode('code2')">Run Code</button>
-            <div id="output2" class="output"></div>
-        </div>
-
-        <div class="question">
-            <p>3. Write a C++ program to find the factorial of a number.</p>
-            <textarea id="code3" placeholder="Type your code here..."></textarea>
-            <button onclick="runCode('code3')">Run Code</button>
-            <div id="output3" class="output"></div>
-        </div>
-
-        <div class="question">
-            <p>4. Write a Java program to check if a number is prime.</p>
-            <textarea id="code4" placeholder="Type your code here..."></textarea>
-            <button onclick="runCode('code4')">Run Code</button>
-            <div id="output4" class="output"></div>
-        </div>
-
-        <div class="question">
-            <p>5. Write a Python function to sort a list of integers.</p>
-            <textarea id="code5" placeholder="Type your code here..."></textarea>
-            <button onclick="runCode('code5')">Run Code</button>
-            <div id="output5" class="output"></div>
-        </div>
-    </div>
-
-    <script>
-        function runCode(codeId) {
-            const code = document.getElementById(codeId).value;
-            // This is a placeholder. In a real scenario, you would send the code to an online compiler API and get the result.
-            document.getElementById('output' + codeId.charAt(codeId.length - 1)).innerText = 'Output: ' + code;
-        }
-    </script>
-
-    <script>
-        function runCode() {
-            const code = document.querySelector('#compiler-section textarea').value;
-            alert('Code submitted: ' + code);
-            // Add your code execution logic here
-        }
-    </script>
-</body>
-</html>
+<footer>
+<p>&copy; 2024 BIT. All rights reserved.</p>
+</footer>
