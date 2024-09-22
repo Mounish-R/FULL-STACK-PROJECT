@@ -1,7 +1,11 @@
-<h2>Saved Code Snippets</h2>
-<ul>
-  <li *ngFor="let code of codes">
-    <h3>{{ code.title }} ({{ code.language }})</h3>
-    <pre>{{ code.code }}</pre>
-  </li>
-</ul>
+<div class="code-list-container">
+  <h2>📂 Saved Code Snippets</h2>
+  <ul class="snippet-list">
+    <li *ngFor="let code of codes">
+      <div class="snippet-card">
+        <h3>{{ code.title }} <span>({{ code.language }})</span></h3>
+        <pre>{{ code.code }}</pre>
+      </div>
+    </li>
+  </ul>
+</div>

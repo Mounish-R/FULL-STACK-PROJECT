@@ -38,11 +38,21 @@ export class AdminSectionComponent {
     });
   }
 
-  onSubmitProgrammingQuestion() {
-    this.questionService.addProgrammingQuestion(this.programmingQuestion).subscribe(response => {
-      console.log(response.message);
-    }, error => {
-      console.error('Error:', error);
-    });
-  }
+  
+onSubmitProgrammingQuestion() {
+  const programmingQuestionData = {
+    question: this.programmingQuestion.question
+  };
+
+  this.questionService.addProgrammingQuestion(programmingQuestionData).subscribe(
+    (response) => {
+      console.log('Programming question added successfully', response);
+      // Reset the form or handle the response as needed
+      this.programmingQuestion.question = ''; // Reset the question input
+    },
+    (error) => {
+      console.error('Error adding programming question:', error);
+    }
+  );
+}
 }

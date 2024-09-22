@@ -1,3 +1,5 @@
+// E:\angular17_login\src\app\user-section\user-section.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../admin-section/question.service';
 
@@ -11,6 +13,7 @@ export class UserSectionComponent implements OnInit {
   mcqs: any[] = [];
   shortAnswers: any[] = [];
   matchQuestions: any[] = [];
+  programmingQuestions: any[] = [];  // New property
 
   constructor(private questionService: QuestionService) { }
 
@@ -19,9 +22,9 @@ export class UserSectionComponent implements OnInit {
     this.loadMcqs();
     this.loadShortAnswers();
     this.loadMatchQuestions();
+    this.loadProgrammingQuestions();  // Load programming questions
   }
   
-
   loadMcqs() {
     this.questionService.getMcqs().subscribe((data: any[]) => {
       this.mcqs = data;
@@ -44,5 +47,15 @@ export class UserSectionComponent implements OnInit {
       }
     );
   }
-  
+
+  loadProgrammingQuestions() {
+    this.questionService.getProgrammingQuestions().subscribe(
+      (data: any[]) => {
+        this.programmingQuestions = data;
+      },
+      (error) => {
+        console.error('Error loading programming questions:', error);
+      }
+    );
+  }
 }

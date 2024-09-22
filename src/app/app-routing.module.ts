@@ -1,3 +1,5 @@
+// E:\angular17_login\src\app\app-routing.module.ts
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
@@ -9,29 +11,27 @@ import { CodeEditorComponent } from './code_editor/code-editor.component';  // I
 
 const routes: Routes = [
   {
-    path:'',
-    redirectTo : 'login',
-    pathMatch:'full'
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
   },
   {
-    path:'login',
+    path: 'login',
     component: LoginComponent
   },
-  
   {
-    path:'',
+    path: '',
     component: LayoutComponent,
     children: [
       {
-        path:'dashboard',
-        component:DashboardComponent
+        path: 'dashboard',
+        component: DashboardComponent
       }
     ]
   },
   { path: 'admin', component: AdminSectionComponent },
   { path: 'user', component: UserSectionComponent },
-  { path: 'codeEditor', component: CodeEditorComponent }, 
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
+  { path: 'codeEditor', component: CodeEditorComponent } // Proper route for CodeEditor
 ];
 
 @NgModule({

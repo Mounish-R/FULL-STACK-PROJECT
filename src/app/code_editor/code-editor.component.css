@@ -1,0 +1,120 @@
+/* Ensure the entire page fills the viewport without scroll */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #141E30, #243B55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f0f0f0;
+    overflow: hidden;
+}
+
+/* Fixed-size container for the entire content */
+.fixed-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Code Editor Container */
+.code-editor-container {
+    flex: 1;
+    margin-right: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.code-editor-container h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #00D1FF;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    flex: none;
+}
+
+.code-editor-container label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #00D1FF;
+    margin-bottom: 5px;
+}
+
+.code-editor-container input, 
+.code-editor-container select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #f0f0f0;
+}
+
+.editor-container {
+    flex-grow: 1;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    height: 60%;
+    margin-bottom: 15px;
+}
+
+/* Save Button */
+.save-btn {
+    background-color: #00D1FF;
+    color: #141E30;
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-btn:hover {
+    background-color: #0094C6;
+}
+
+/* Output Section */
+.output-container {
+    flex: 0.8;
+    margin-left: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: auto;
+}
+
+.output-container h3 {
+    font-size: 1.5rem;
+    color: #00D1FF;
+    margin-bottom: 10px;
+}
+
+.output-container pre {
+    background-color: #1E2A38;
+    padding: 10px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    color: #00FF00;
+    height: 100%;
+    overflow: auto;
+}

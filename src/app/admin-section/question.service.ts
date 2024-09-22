@@ -38,11 +38,11 @@ export class QuestionService {
   }
 
   getMatches(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.baseUrl}/matches`);
+    return this.http.get<any[]>(`${this.baseUrl}/match`);
   }
   
 
-  getProgrammingQuestions(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/programming-question`);
+  getProgrammingQuestions() {
+    return this.http.get<any[]>('/api/questions/programming'); // Adjust the API endpoint if necessary
   }
 }

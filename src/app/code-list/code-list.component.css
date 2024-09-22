@@ -1,0 +1,59 @@
+/* Code List Container */
+.code-list-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #141E30, #243B55);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.code-list-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FF6B6B;
+}
+
+.snippet-list {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.snippet-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.snippet-card:hover {
+    transform: scale(1.03);
+}
+
+.snippet-card h3 {
+    font-size: 1.4rem;
+    color: #FF6B6B;
+}
+
+.snippet-card h3 span {
+    font-size: 1rem;
+    color: #FFD700;
+}
+
+.snippet-card pre {
+    background-color: #1E2A38;
+    padding: 10px;
+    border-radius: 8px;
+    color: #00FF00;
+    max-height: 150px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
