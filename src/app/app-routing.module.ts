@@ -5,6 +5,7 @@ import { LayoutComponent } from './pages/layout/layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AdminSectionComponent } from './admin-section/admin-section.component';
 import { UserSectionComponent } from './user-section/user-section.component';
+import { CodeEditorComponent } from './code_editor/code-editor.component';  // Import the component
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
   },
   { path: 'admin', component: AdminSectionComponent },
   { path: 'user', component: UserSectionComponent },
+  { path: 'codeEditor', component: CodeEditorComponent }, 
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
 

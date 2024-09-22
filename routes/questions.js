@@ -64,3 +64,36 @@ router.post('/programming-question', async (req, res) => {
 });
 
 module.exports = router;
+
+// Route to get all MCQs
+router.get('/mcq', async (req, res) => {
+    try {
+        const mcqs = await MCQ.find();
+        res.status(200).json(mcqs);
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching MCQs', error: err });
+    }
+});
+
+// Route to get all Short Answer questions
+router.get('/short-answer', async (req, res) => {
+    try {
+        const shortAnswers = await ShortAnswer.find();
+        res.status(200).json(shortAnswers);
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching short answers', error: err });
+    }
+});
+
+// Route to get all Match the Following questions
+router.get('/match', async (req, res) => {
+    try {
+        const matchQuestions = await Match.find();
+        res.status(200).json(matchQuestions);
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching match questions', error: err });
+    }
+});
+
+
+

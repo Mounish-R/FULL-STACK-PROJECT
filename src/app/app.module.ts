@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { AdminSectionComponent } from './admin-section/admin-section.component';
 import { UserSectionComponent } from './user-section/user-section.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CodeEditorComponent } from './code_editor/code-editor.component';
+import { CodeListComponent } from './code-list/code-list.component';
 
 
 @NgModule({
@@ -19,13 +23,18 @@ import { HttpClientModule } from '@angular/common/http';
     LayoutComponent,
     DashboardComponent,
     AdminSectionComponent,
-    UserSectionComponent
+    UserSectionComponent,
+    CodeEditorComponent,
+    CodeListComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MonacoEditorModule.forRoot()
+
 
   ],
   providers: [],

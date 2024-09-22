@@ -11,6 +11,7 @@ export class QuestionService {
 
   constructor(private http: HttpClient) { }
 
+  // POST methods for adding questions (already correct)
   addMcq(mcq: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/mcq`, mcq);
   }
@@ -25,5 +26,23 @@ export class QuestionService {
 
   addProgrammingQuestion(programmingQuestion: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/programming-question`, programmingQuestion);
+  }
+
+  // GET methods for fetching questions
+  getMcqs(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/mcq`);
+  }
+
+  getShortAnswers(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/short-answer`);
+  }
+
+  getMatches(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/matches`);
+  }
+  
+
+  getProgrammingQuestions(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/programming-question`);
   }
 }

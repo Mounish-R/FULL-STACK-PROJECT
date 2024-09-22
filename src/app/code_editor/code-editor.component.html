@@ -1,0 +1,20 @@
+<div>
+  <label>Title:</label>
+  <input [(ngModel)]="title" placeholder="Enter code title" />
+</div>
+<div>
+  <label>Language:</label>
+  <select [(ngModel)]="language">
+    <option *ngFor="let lang of languages" [value]="lang">{{ lang }}</option>
+  </select>
+</div>
+<div style="height: 400px;">
+  <ngx-monaco-editor [(ngModel)]="code" [options]="editorOptions"></ngx-monaco-editor>
+</div>
+<button (click)="saveCode()">Save Code</button>
+
+<!-- Display the output here -->
+<div>
+  <h3>Output:</h3>
+  <pre>{{ output }}</pre>
+</div>

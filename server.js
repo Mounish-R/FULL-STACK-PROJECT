@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors'); // Import cors middleware
 const questionRoutes = require('./routes/questions'); // Import question routes
+const CodeEditor = require('./routes/code-editor')
 
 const app = express();
 
@@ -22,6 +23,7 @@ mongoose.connect('mongodb://localhost:27017/Questions', {
 
 // Use question routes
 app.use('/api/questions', questionRoutes);
+app.use('/api/codes',CodeEditor)
 
 // Example route
 app.get('/', (req, res) => {
@@ -29,7 +31,7 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT =  3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

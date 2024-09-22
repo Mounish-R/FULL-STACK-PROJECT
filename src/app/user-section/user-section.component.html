@@ -1,190 +1,29 @@
-<p>user-section works!</p>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assessment Interface</title>
-</head>
-<body>
+<h2>MCQs</h2>
+<div *ngFor="let mcq of mcqs">
+  <h3>{{ mcq.question }}</h3>
+  <ul>
+    <li>{{ mcq.options.option1 }}</li>
+    <li>{{ mcq.options.option2 }}</li>
+    <li>{{ mcq.options.option3 }}</li>
+    <li>{{ mcq.options.option4 }}</li>
+  </ul>
+  <p><strong>Correct Answer:</strong> {{ mcq.correctAnswer }}</p>
+</div>
 
-    <h1>Assessment Interface</h1>
+<h2>Short Answer Questions</h2>
+<div *ngFor="let shortAnswer of shortAnswers">
+  <h3>{{ shortAnswer.question }}</h3>
+  <p><strong>Answer:</strong> {{ shortAnswer.answer }}</p>
+</div>
 
-    <!-- MCQ Section -->
-    <div class="section">
-        <h2>Multiple Choice Questions (MCQ)</h2>
-        <div class="question">
-            <p>1. What is the capital of France?</p>
-            <ul class="options">
-                <li><input type="radio" name="mcq1" value="Paris"> Paris</li>
-                <li><input type="radio" name="mcq1" value="Berlin"> Berlin</li>
-                <li><input type="radio" name="mcq1" value="Madrid"> Madrid</li>
-                <li><input type="radio" name="mcq1" value="Rome"> Rome</li>
-            </ul>
-        </div>
-        <div class="question">
-            <p>2. What is the largest planet in our solar system?</p>
-            <ul class="options">
-                <li><input type="radio" name="mcq2" value="Earth"> Earth</li>
-                <li><input type="radio" name="mcq2" value="Jupiter"> Jupiter</li>
-                <li><input type="radio" name="mcq2" value="Mars"> Mars</li>
-                <li><input type="radio" name="mcq2" value="Venus"> Venus</li>
-            </ul>
-        </div>
-        <div class="question">
-            <p>3. What is the chemical symbol for water?</p>
-            <ul class="options">
-                <li><input type="radio" name="mcq3" value="O2"> O<sub>2</sub></li>
-                <li><input type="radio" name="mcq3" value="H2O"> H<sub>2</sub>O</li>
-                <li><input type="radio" name="mcq3" value="CO2"> CO<sub>2</sub></li>
-                <li><input type="radio" name="mcq3" value="NaCl"> NaCl</li>
-            </ul>
-        </div>
-        <div class="question">
-            <p>4. Who wrote "Romeo and Juliet"?</p>
-            <ul class="options">
-                <li><input type="radio" name="mcq4" value="Shakespeare"> William Shakespeare</li>
-                <li><input type="radio" name="mcq4" value="Dickens"> Charles Dickens</li>
-                <li><input type="radio" name="mcq4" value="Hemingway"> Ernest Hemingway</li>
-                <li><input type="radio" name="mcq4" value="Orwell"> George Orwell</li>
-            </ul>
-        </div>
-        <div class="question">
-            <p>5. Which element is most abundant in the Earth's atmosphere?</p>
-            <ul class="options">
-                <li><input type="radio" name="mcq5" value="Oxygen"> Oxygen</li>
-                <li><input type="radio" name="mcq5" value="Nitrogen"> Nitrogen</li>
-                <li><input type="radio" name="mcq5" value="Carbon"> Carbon</li>
-                <li><input type="radio" name="mcq5" value="Hydrogen"> Hydrogen</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Short Answer Section -->
-    <div class="section">
-        <h2>Short Answer</h2>
-        <div class="question">
-            <p>1. Describe the process of photosynthesis.</p>
-            <textarea placeholder="Type your answer here..."></textarea>
-        </div>
-        <div class="question">
-            <p>2. Explain Newton's first law of motion.</p>
-            <textarea placeholder="Type your answer here..."></textarea>
-        </div>
-        <div class="question">
-            <p>3. What are the three branches of government?</p>
-            <textarea placeholder="Type your answer here..."></textarea>
-        </div>
-        <div class="question">
-            <p>4. Define the term 'Biodiversity'.</p>
-            <textarea placeholder="Type your answer here..."></textarea>
-        </div>
-        <div class="question">
-            <p>5. Explain the significance of the water cycle.</p>
-            <textarea placeholder="Type your answer here..."></textarea>
-        </div>
-    </div>
-
-    <!-- Match the Following Section -->
-    <div class="section">
-        <h2>Match the Following</h2>
-        <div class="question">
-            <p>1. Match the following countries with their capitals:</p>
-            <div class="match-pair">
-                <span>France</span>
-                <select>
-                    <option value="">Select Capital</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="Rome">Rome</option>
-                </select>
-            </div>
-            <div class="match-pair">
-                <span>Germany</span>
-                <select>
-                    <option value="">Select Capital</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="Rome">Rome</option>
-                </select>
-            </div>
-            <div class="match-pair">
-                <span>Spain</span>
-                <select>
-                    <option value="">Select Capital</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="Rome">Rome</option>
-                </select>
-            </div>
-            <div class="match-pair">
-                <span>Italy</span>
-                <select>
-                    <option value="">Select Capital</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="Rome">Rome</option>
-                </select>
-            </div>
-            <div class="match-pair">
-                <span>UK</span>
-                <select>
-                    <option value="">Select Capital</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="London">London</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-     <!-- Compiler Section -->
-    <div class="section" id="compiler-section">
-        <h2>Code Compiler</h2>
-
-        <div class="question">
-            <p>1. Write a Python program to print "Hello, World!".</p>
-            <div class="compiler-container">
-                <iframe src="https://www.programiz.com/python-programming/online-compiler/" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <div class="question">
-            <p>2. Write a c code to reverse a string.</p>
-            <div class="compiler-container">
-                <iframe src="https://www.programiz.com/c-programming/online-compiler/" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <div class="question">
-            <p>3. Write a C++ program to find the factorial of a number.</p>
-            <div class="compiler-container">
-                <iframe src="https://www.programiz.com/cpp-programming/online-compiler/" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <div class="question">
-            <p>4. Write a Java program to check if a number is prime.</p>
-            <div class="compiler-container">
-                <iframe src="https://www.programiz.com/javascript/online-compiler/" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <div class="question">
-            <p>5. Write a Python function to sort a list of integers.</p>
-            <div class="compiler-container">
-                <iframe src="https://www.programiz.com/python-programming/online-compiler/" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-    
-</body>
-<footer>
-    <p>&copy; 2024 BIT. All rights reserved.</p>
-</footer>
-</html>
+<h2>Match the Following Questions</h2>
+<div *ngFor="let match of matchQuestions">
+  <h3>{{ match.question }}</h3>
+  <ul>
+    <li>{{ match.options.option1 }}</li>
+    <li>{{ match.options.option2 }}</li>
+    <li>{{ match.options.option3 }}</li>
+    <li>{{ match.options.option4 }}</li>
+  </ul>
+  <p><strong>Correct Match:</strong> {{ match.correctMatch }}</p>
+</div>
