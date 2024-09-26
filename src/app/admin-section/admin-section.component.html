@@ -48,24 +48,56 @@
 
 <!-- Match the Following Form -->
 <h2>Add Match the Following</h2>
-<form (ngSubmit)="onSubmitMatch()">
+<form (ngSubmit)="on_submit_match()">
   <label for="match-question">Question:</label><br>
   <input type="text" [(ngModel)]="match.question" name="question" placeholder="Enter match the following question" required><br><br>
 
-  <label for="match-option1">Option 1:</label><br>
-  <input type="text" [(ngModel)]="match.option1" name="option1" placeholder="Option 1" required><br><br>
-
-  <label for="match-option2">Option 2:</label><br>
-  <input type="text" [(ngModel)]="match.option2" name="option2" placeholder="Option 2" required><br><br>
-
-  <label for="match-option3">Option 3:</label><br>
-  <input type="text" [(ngModel)]="match.option3" name="option3" placeholder="Option 3" required><br><br>
-
-  <label for="match-option4">Option 4:</label><br>
-  <input type="text" [(ngModel)]="match.option4" name="option4" placeholder="Option 4" required><br><br>
-
-  <label for="correct-match">Correct Match:</label><br>
-  <input type="text" [(ngModel)]="match.correctMatch" name="correctMatch" placeholder="Enter the correct match" required><br><br>
+  <table>
+    <tr>
+      <th>Questions</th>
+      <th>Answers</th>
+    </tr>
+    <tr>
+      <td>
+        <label for="match-question1">Question 1:</label><br>
+        <input type="text" [(ngModel)]="match.question1" name="question1" placeholder="Question 1" required><br><br>
+      </td>
+      <td>
+        <label for="match-answer1">Answer 1:</label><br>
+        <input type="text" [(ngModel)]="match.answer1" name="answer1" placeholder="Answer 1" required><br><br>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="match-question2">Question 2:</label><br>
+        <input type="text" [(ngModel)]="match.question2" name="question2" placeholder="Question 2" required><br><br>
+      </td>
+      <td>
+        <label for="match-answer2">Answer 2:</label><br>
+        <input type="text" [(ngModel)]="match.answer2" name="answer2" placeholder="Answer 2" required><br><br>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="match-question3">Question 3:</label><br>
+        <input type="text" [(ngModel)]="match.question3" name="question3" placeholder="Question 3" required><br><br>
+      </td>
+      <td>
+        <label for="match-answer3">Answer 3:</label><br>
+        <input type="text" [(ngModel)]="match.answer3" name="answer3" placeholder="Answer 3" required><br><br>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label for="match-question4">Question 4:</label><br>
+        <input type="text" [(ngModel)]="match.question4" name="question4" placeholder="Question 4" required><br><br>
+      </td>
+      <td>
+        <label for="match-answer4">Answer 4:</label><br>
+        <input type="text" [(ngModel)]="match.answer4" name="answer4" placeholder="Answer 4" required><br><br>
+      </td>
+    </tr>
+  </table>
 
   <button type="submit">Add Match the Following</button>
 </form>

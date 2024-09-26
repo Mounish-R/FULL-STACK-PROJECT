@@ -1,9 +1,9 @@
 <div class="fixed-container">
   <div class="code-editor-container">
-    <h2>💻 Code Playground</h2>
+    <h2>Code Editor</h2>
 
     <div class="form-group">
-      <label for="title">🚀 Code Title:</label>
+      <label for="title">Code Title:</label>
       <input id="title" [(ngModel)]="title" placeholder="Enter code title" />
     </div>
 
@@ -18,7 +18,7 @@
       <ngx-monaco-editor [(ngModel)]="code" [options]="editorOptions"></ngx-monaco-editor>
     </div>
 
-    <button class="save-btn" (click)="saveCode()">💾 Save Code</button>
+    <button class="save-btn" (click)="saveCode()">Compiler & Run</button>
   </div>
 
   <!-- Display the output here -->

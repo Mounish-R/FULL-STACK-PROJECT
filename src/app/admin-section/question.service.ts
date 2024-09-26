@@ -42,7 +42,7 @@ export class QuestionService {
   }
   
 
-  getProgrammingQuestions() {
-    return this.http.get<any[]>('/api/questions/programming'); // Adjust the API endpoint if necessary
+  getProgrammingQuestions(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/programming`); // Adjust the endpoint if necessary
   }
 }

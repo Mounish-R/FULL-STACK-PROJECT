@@ -37,12 +37,12 @@ router.post('/short-answer', async (req, res) => {
 
 // Route to handle Match the Following submissions
 router.post('/match', async (req, res) => {
-    const { question, option1, option2, option3, option4, correctMatch } = req.body;
+    const { question, questions, answers } = req.body;
     try {
         const newMatch = new Match({
             question,
-            options: { option1, option2, option3, option4 },
-            correctMatch
+            questions,
+            answers
         });
         await newMatch.save();
         res.status(200).json({ message: 'Match the following added successfully' });
@@ -63,7 +63,7 @@ router.post('/programming-question', async (req, res) => {
     }
 });
 
-module.exports = router;
+
 
 // Route to get all MCQs
 router.get('/mcq', async (req, res) => {
@@ -94,6 +94,14 @@ router.get('/match', async (req, res) => {
         res.status(500).json({ message: 'Error fetching match questions', error: err });
     }
 });
-
-
+// Route to get all Programming Questions
+router.get('/programming', async (req, res) => {
+    try {
+        const programmingQuestions = await ProgrammingQuestion.find();
+        res.status(200).json(programmingQuestions);
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching programming questions', error: err });
+    }
+});
+module.exports = router;
 

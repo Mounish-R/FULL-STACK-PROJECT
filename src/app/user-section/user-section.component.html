@@ -2,47 +2,106 @@
   <h1>Online Test Portal</h1>
 
   <div class="section">
-      <h2>MCQs</h2>
-      <div *ngFor="let mcq of mcqs" class="question-card">
-          <h3>{{ mcq.question }}</h3>
-          <ul class="options-list">
-              <li>{{ mcq.options.option1 }}</li>
-              <li>{{ mcq.options.option2 }}</li>
-              <li>{{ mcq.options.option3 }}</li>
-              <li>{{ mcq.options.option4 }}</li>
-          </ul>
-          <p class="correct-answer"><strong>Correct Answer:</strong> {{ mcq.correctAnswer }}</p>
+    <h2>MCQs</h2>
+    <div *ngFor="let mcq of mcqs" class="question-card">
+      <h3>{{ mcq.question }}</h3>
+      <ul class="options-list">
+        <li>
+          <label>
+            <input type="radio" name="{{ mcq.question }}" (change)="selectMcqAnswer(mcq, mcq.options.option1)" />
+            {{ mcq.options.option1 }}
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="{{ mcq.question }}" (change)="selectMcqAnswer(mcq, mcq.options.option2)" />
+            {{ mcq.options.option2 }}
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="{{ mcq.question }}" (change)="selectMcqAnswer(mcq, mcq.options.option3)" />
+            {{ mcq.options.option3 }}
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="radio" name="{{ mcq.question }}" (change)="selectMcqAnswer(mcq, mcq.options.option4)" />
+            {{ mcq.options.option4 }}
+          </label>
+        </li>
+      </ul>
+      <p *ngIf="selectedAnswers[mcq.question]" class="feedback">
+        <strong>Your answer is: </strong>
+        <span [ngClass]="{'correct': isMcqCorrect(mcq), 'incorrect': !isMcqCorrect(mcq)}">
+          {{ isMcqCorrect(mcq) ? 'Correct' : 'Incorrect' }}
+        </span>
+      </p>
+    </div>
+  </div>
+  
+  <div>
+    <h2>ShortAnswers</h2>
+    <div *ngFor="let shortAnswer of shortAnswers" class="question-card">
+        <h3>{{ shortAnswer.question }}</h3>
+        <input type="text" [(ngModel)]="shortAnswer.userAnswer" placeholder="Your answer here">
+        <p *ngIf="shortAnswer.userAnswer" class="feedback">
+          <strong>Your answer is: </strong>{{ shortAnswer.userAnswer }}
+        </p>
       </div>
   </div>
+  
 
   <div class="section">
-      <h2>Short Answer Questions</h2>
-      <div *ngFor="let shortAnswer of shortAnswers" class="question-card">
-          <h3>{{ shortAnswer.question }}</h3>
-          <p class="answer"><strong>Answer:</strong> {{ shortAnswer.answer }}</p>
-      </div>
-  </div>
-
-  <div class="section">
-      <h2>Match the Following Questions</h2>
-      <div *ngFor="let match of matchQuestions" class="question-card">
+    <div class="section">
+        <h2>Match the following question</h2>
+        <div *ngFor="let match of matchQuestions" class="question-card">
           <h3>{{ match.question }}</h3>
-          <ul class="options-list">
-              <li>{{ match.options.option1 }}</li>
-              <li>{{ match.options.option2 }}</li>
-              <li>{{ match.options.option3 }}</li>
-              <li>{{ match.options.option4 }}</li>
-          </ul>
-          <p class="correct-match"><strong>Correct Match:</strong> {{ match.correctMatch }}</p>
+    
+          <!-- Left: Questions, Right: Select answers -->
+          <div class="match-container">
+            <!-- Left Side: Questions -->
+            <div class="match-questions">
+              <p *ngFor="let question of match.questions">{{ question }}</p>
+            </div>
+    
+            <!-- Right Side: Answer Dropdowns -->
+            <div class="match-answers">
+              <div *ngFor="let question of match.questions; let i = index">
+                <select [(ngModel)]="userMatches[match.question][i]">
+                  <option *ngFor="let answer of match.answers" [value]="answer">{{ answer }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Feedback after user submits match -->
+          <div *ngIf="isSubmitted">
+            <p *ngFor="let question of match.questions; let i = index" class="feedback">
+              <strong>Match for "{{ question }}": </strong>
+              <span [ngClass]="{'correct': isMatchCorrect(match, i), 'incorrect': !isMatchCorrect(match, i)}">
+                {{ isMatchCorrect(match, i) ? 'Correct' : 'Incorrect' }}
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
+    
+      <!-- Button to Submit Matches -->
+      <button (click)="submitMatches()">Submit Matches</button>
   </div>
 
   <div class="section">
-      <h2>Programming Questions</h2>
-      <div *ngFor="let programmingQuestion of programmingQuestions" class="question-card">
-          <h3>{{ programmingQuestion.question }}</h3>
-      </div>
+    <h2>Programming Questions</h2>
+    <div *ngFor="let programmingQuestion of programmingQuestions" class="question-card">
+        <h3>{{ programmingQuestion.question }}</h3>
+        <div *ngIf="programmingQuestion.code">
+            <h4>Code:</h4>
+            <pre>{{ programmingQuestion.code }}</pre> <!-- Display code if available -->
+        </div>
+    </div>
   </div>
+  
 
   <!-- Link to the Code Editor -->
   <div class="button-container">
