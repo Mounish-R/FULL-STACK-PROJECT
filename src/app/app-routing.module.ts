@@ -10,25 +10,9 @@ import { UserSectionComponent } from './user-section/user-section.component';
 import { CodeEditorComponent } from './code_editor/code-editor.component';  // Import the component
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: '',
-    component: LayoutComponent,
-    children: [
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      }
-    ]
-  },
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: '', component: LoginComponent },
   { path: 'admin', component: AdminSectionComponent },
   { path: 'user', component: UserSectionComponent },
   { path: 'codeEditor', component: CodeEditorComponent } // Proper route for CodeEditor

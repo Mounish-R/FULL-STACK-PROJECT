@@ -35,3 +35,10 @@ const PORT =  3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+app.post('/api/login', (req, res) => {
+    // Handle POST request here
+    console.log(req.body); // Print the POST request body to console
+    res.redirect('http://localhost:4200/dashboard/')
+});
+  

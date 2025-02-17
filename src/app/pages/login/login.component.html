@@ -1,44 +1,29 @@
-<div class="logo">
-    <img src="https://www.bitsathy.ac.in/wp-content/themes/baiotsathycollege/assets/images/header%2006.png" alt="Description of Image">
-</div>
-<div class="parent">  
-    <div class="container" [ngClass]="isSignDivVisiable ? 'active' :'' " id="container">
-        <div class="form-container sign-up" >
-            <form>
-                
-                <h1>Create Account</h1>
-                
-                <input type="text" name="name" [(ngModel)]="signUpObj.name" placeholder="Name">
-                <input type="email" name="email" [(ngModel)]="signUpObj.email" placeholder="Email">
-                <input type="password" name="password"  [(ngModel)]="signUpObj.password" placeholder="Password">
-                <button (click)="onRegister()">Sign Up</button>
-                <button (click)="onRegister()">Login With Google</button>
-            </form>
-        </div>
-        <div class="form-container sign-in" >
-            <form>
-                <h1>Sign In</h1>
-                <input type="email" name="email" [(ngModel)]="loginObj.email" placeholder="Email">
-                <input type="password" name="password"   [(ngModel)]="loginObj.password" placeholder="Password">
-                <a href="#">→ Forget Your Password ? ←</a>
-                <button (click)="onLogin()">Sign In</button>
-            </form>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>CODING BIT</h1>
-                    <p>Enter your College Email</p>
-                    <button type="button" class="hidden" id="login" (click)="isSignDivVisiable = false">Sign In</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>TEST PORTAL</h1>
-                    <p>Register with your personal details</p>
-                    <button type="button" class="hidden" id="register" (click)="isSignDivVisiable = true">Sign Up</button>
-                </div>
-            </div>
-        </div>
+<div class="login-container">
+    <div class="logo-container">
+      <img src="assets/my-image.png" alt="Logo" class="logo" />
     </div>
-</div>
-
-
+  
+    <h2 class="login-text">LOGIN WITH YOUR BITSATHY.AC.IN MAIL ID</h2>
+  
+    <!-- Google Sign-In -->
+    <div class="google-signin-container">
+      <div id="g_id_onload"
+           data-client_id="485788029550-pjqt7r9pkk385j8fbrmht9lgi62b0ifn.apps.googleusercontent.com"
+           data-context="signin"
+           data-ux_mode="popup"
+           data-login_uri="http://localhost:3000/api/login"
+           data-auto_select="true"
+           data-itp_support="true">
+      </div>
+  
+      <div class="g_id_signin"
+           data-type="standard"
+           data-shape="rectangular"
+           data-theme="outline"
+           data-text="signin_with"
+           data-size="large"
+           data-logo_alignment="left">
+      </div>
+    </div>
+  </div>
+  
